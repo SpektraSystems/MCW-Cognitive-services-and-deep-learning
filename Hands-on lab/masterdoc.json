@@ -26,6 +26,10 @@
       {
         "RawFilePath": "https://raw.githubusercontent.com/SpektraSystems/MCW-Cognitive-services-and-deep-learning/master/Hands-on%20lab/04.md",
         "Order": 6
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/SpektraSystems/MCW-Cognitive-services-and-deep-learning/master/Hands-on%20lab/lab-completed.md",
+        "Order": 7
       }  
     ]
   }
