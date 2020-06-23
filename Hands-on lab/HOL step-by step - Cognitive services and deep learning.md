@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-December 2019
+June 2020
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -29,9 +29,8 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
   - [Overview](#overview)
   - [Solution architecture](#solution-architecture)
   - [Requirements](#requirements)
-  - [Exercise 1: Setup Azure Notebooks Project](#exercise-1-setup-azure-notebooks-project)
-    - [Task 1: Upload project files](#task-1-upload-project-files)
-    - [Task 2: Start the Notebook Server](#task-2-start-the-notebook-server)
+   - [Exercise 1: Locate the Lab Notebooks](#exercise-1-locate-the-lab-notebooks)
+    - [Task 1: Open the notebooks folder](#task-1-open-the-notebooks-folder)
   - [Exercise 2: Create and Deploy an Unsupervised Model](#exercise-2-create-and-deploy-an-unsupervised-model)
     - [Task 1: Install libraries](#task-1-install-libraries)
     - [Task 2: Read through and execute the Summarization notebook](#task-2-read-through-and-execute-the-summarization-notebook)
@@ -50,9 +49,9 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 ## Abstract and learning objectives
 
-In this hands-on lab, you will implement a solution which combines both pre-built artificial intelligence (AI) in the form of various Cognitive Services, with custom AI in the form of services built and deployed with Azure Machine Learning service. You will learn to create intelligent solutions atop unstructured text data by designing and implementing a text analytics pipeline. You will discover how to build a binary classifier using a simple neural network that can be used to classify the textual data, as well as how to deploy multiple kinds of predictive services using Azure Machine Learning and learn to integrate with the Computer Vision API and the Text Analytics API from Cognitive Services.
+In this hands-on lab, you will implement a solution which combines both pre-built artificial intelligence (AI) in the form of various Cognitive Services, with custom AI in the form of services built and deployed with Azure Machine Learning service. In the lab you will be working with unstructured text and image data and learning how to build analytics pipelines for various problems such as text summarization, text classification, image detection, OCR, and sentiment analysis. You will learn how to build and train a deep neural net for text classification.  You will also learn how to deploy multiple kinds of predictive services using Azure Machine Learning and learn to integrate with the Computer Vision API and the Text Analytics API from Cognitive Services.
 
-At the end of this hands-on lab, you will be better able to implement solutions leveraging Azure Machine Learning service and Cognitive Services.
+At the end of this hands-on lab, you will be better able to present solutions leveraging Azure Machine Learning service, Azure Machine Learning Compute instance and Cognitive Services.
 
 ## Overview
 
@@ -60,7 +59,7 @@ In this workshop, you will help Contoso Ltd. build a proof of concept that shows
 
 ## Solution architecture
 
-The high-level architecture of the solution is illustrated in the diagram. The lab is performed within the context of a notebook running within Azure Notebooks. Various notebooks are built to test the integration with the Cognitive Services listed, to train custom ML services, and to integrate the results in a simple user interface that shows the result of processing the claim with all of the AI services involved.
+The high-level architecture of the solution is illustrated in the diagram. The lab is performed within the context of a notebook running within Machine Learning compute instance. Various notebooks are built to test the integration with the Cognitive Services listed, to train custom ML services, and to integrate the results in a simple user interface that shows the result of processing the claim with all of the AI services involved.
 
 ![The High-level architectural solution begins with a Claim, which us submitted for processing using a notebook in Azure Databricks. This notebook coordinates the calls to Computer Vision, Text Analytics, and Containerized Services, which includes a Classification Service and a Summary Service that both processes claim text.](media/image2.jpg 'High-level architectural solution')
 
@@ -72,35 +71,23 @@ The high-level architecture of the solution is illustrated in the diagram. The l
 
     - Subscriptions with access limited to a single resource group will not work. You will need the ability to deploy multiple resource groups.
 
-## Exercise 1: Setup Azure Notebooks Project
+## Exercise 1: Locate the Lab Notebooks
 
-Duration: 20 minutes
+Duration: 5 minutes
 
-In this exercise, you will set up your Azure Notebooks Project.
+In this exercise, you will navigate to the folder where all the notebooks for this lab are available.
 
-### Task 1: Upload project files
+### Task 1: Open the notebooks folder
 
-1. Log in to [Azure Notebooks](https://notebooks.azure.com/).
+1. From within your Azure Machine Learning workspace navigate to the `Compute` section.
 
-2. Navigate to **My Projects** page.
+2. Select the Compute Instance: **csdl-compute** and then select **Jupyter** open icon, to open Jupyter Notebooks interface.
 
-3. Select **Upload GitHub Repo**.
+   ![The Compute section of the Azure Machine Learning workspace showing the Jupyter link selected for the compute instance csdl-compute.](images/06.png 'Open Jupyter Notebooks')
 
-4. In the Upload GitHub Repository dialog, for the GitHub repository provide **`https://github.com/microsoft/MCW-Cognitive-services-and-deep-learning.git`** and select **Import**. Allow the import a few moments to complete. The dialog will dismiss once the import has completed.
+3. Navigate to the `> mcw-csdl > MCW-Cognitive-services-and-deep-learning > Hands-on lab > notebooks` folder where you will find all your lab files.
 
-    ![In the dialog the GitHub URL to upload the project repository is shown.](images/az_nb_setup/01.png 'Upload GitHub Repository dialog box')
-
-### Task 2: Start the Notebook Server
-
-1. Navigate to your project: `MCW-Cognitive-services-and-deep-learning`.
-
-2. Start your Notebook server on `Free Compute` by selecting the **Play** icon in the toolbar as shown:
-
-    ![The image shows the Start Notebook Server Icon and highlights the area to select.](images/az_nb_setup/02.png 'Start Notebook Server Icon')
-
-3. Navigate to the `> MCW-Cognitive-services-and-deep-learning > Hands-on lab > notebooks` folder where you will find all your lab files.
-
-    ![Jupyter notebook interface showing the folder where the lab files are present.](images/az_nb_setup/03.png 'Jupyter Notebooks Folder')
+    ![Jupyter notebook interface showing the folder where the lab files are present.](images/09.png 'Jupyter Notebooks Folder')
 
 ## Exercise 2: Create and Deploy an Unsupervised Model
 
@@ -223,7 +210,7 @@ In this exercise, you will perform the final integration with the Computer Visio
 
 ### Task 3: Completing the solution
 
-1. Return to your Azure Notebooks Project. Within the `notebooks` folder, select the notebook called `05 Cognitive Services`. This will open the notebook so you can read and execute the code it contains.
+1.  Return to your Azure Machine Learning compute instance. Within the `notebooks` folder, select the notebook called `05 Cognitive Services`. This will open the notebook so you can read and execute the code it contains.
 
 2. Follow the steps within the notebook to complete the lab and view the result of combining Cognitive Services with your Azure Machine Learning Services.
 
