@@ -1,0 +1,32 @@
+[
+  {
+    "Name": "MCW-Cognitive-services-and-deep-learning",
+    "Language": "English",
+    "Files": [
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/SpektraSystems/MCW-Cognitive-services-and-deep-learning/master/Hands-on%20lab/lab-overview.md",
+        "Order": 1
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/SpektraSystems/MCW-Cognitive-services-and-deep-learning/master/Hands-on%20lab/00.md",
+        "Order": 2
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/SpektraSystems/MCW-Cognitive-services-and-deep-learning/master/Hands-on%20lab/01.md",
+        "Order": 3
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/SpektraSystems/MCW-Cognitive-services-and-deep-learning/master/Hands-on%20lab/02.md",
+        "Order": 4
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/SpektraSystems/MCW-Cognitive-services-and-deep-learning/master/Hands-on%20lab/03.md",
+        "Order": 5
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/SpektraSystems/MCW-Cognitive-services-and-deep-learning/master/Hands-on%20lab/04.md",
+        "Order": 6
+      }  
+    ]
+  }
+]
