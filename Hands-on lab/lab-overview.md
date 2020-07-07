@@ -16,3 +16,4 @@ The high-level architecture of the solution is illustrated in the diagram. The l
 
 ![The High-level architectural solution begins with a Claim, which us submitted for processing using a notebook in Azure Databricks. This notebook coordinates the calls to Computer Vision, Text Analytics, and Containerized Services, which includes a Classification Service and a Summary Service that both processes claim text.](media/image2.jpg 'High-level architectural solution')
 
+Now, click on the **Next** from lower right corner of your lab guide page to Begin the lab.
